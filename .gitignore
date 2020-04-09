@@ -49,3 +49,6 @@ Thumbs.db
 /.firebase
 .firebaserc
 firebase.json
+
+# Others
+/src/secret.ts
