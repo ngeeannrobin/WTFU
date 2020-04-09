@@ -10,6 +10,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthService) { }
 
+  message:string = "";
+  loading:boolean = false;
+
   ngOnInit(): void {
     this.auth.CheckLogin().then(loggedin=>{
       if (loggedin)
@@ -18,9 +21,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.loading = true;
+    this.message = "Authenticating";
     this.auth.SignInWithGoogle().then(res=>{
-      alert("login successful");
+      this.message = "Joining Server"
+      //redirect code here
     }).catch(err=>{
+      this.loading = false;
       switch(err.code){
         case "auth/popup-blocked":
           alert("Popup blocked by browser. Please enable popup and try again.");
