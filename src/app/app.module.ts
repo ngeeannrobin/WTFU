@@ -14,13 +14,15 @@ import * as firebase from 'firebase';
 import { firebaseConfig } from '../secret';
 firebase.initializeApp(firebaseConfig);
 
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { LoadingComponent } from './loading/loading.component'
 // import { AngularFirestoreModule } from "angularfire2/firestore";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LoadingComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
