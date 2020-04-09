@@ -25,25 +25,40 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
 
 }
 
 .one {
     transform: translate(6.25%,25%) rotateZ(30deg);
     animation-name: one;
+    -webkit-animation-name: one;
 }
 
 .two {
     transform: translate(-106.25%,-62.5%);
     animation-name: two;
+    -webkit-animation-name: two;
 }
 
 .three {
     transform: translate(6.25%,-125%) rotateZ(30deg);
     animation-name: three;
+    -webkit-animation-name: three;
 }
 
+
+
 @keyframes one {
+    0% {opacity: 0%}
+    20%, 80%{opacity: 100%}
+    100% {opacity: 0%}
+}
+
+@-webkit-keyframes one {
     0% {opacity: 0%}
     20%, 80%{opacity: 100%}
     100% {opacity: 0%}
@@ -55,12 +70,23 @@
     100% {opacity: 0%}
 }
 
+@-webkit-keyframes two {
+    0%, 20% {opacity: 0%}
+    40%, 80%{opacity: 100%}
+    100% {opacity: 0%}
+}
+
 @keyframes three {
     0%, 40% {opacity: 0%}
     60%, 80%{opacity: 100%}
     100% {opacity: 0%}
 }
 
+@-webkit-keyframes three {
+    0%, 40% {opacity: 0%}
+    60%, 80%{opacity: 100%}
+    100% {opacity: 0%}
+}
 
 .message {
     color: #FFFFFF;
