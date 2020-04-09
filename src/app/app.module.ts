@@ -6,11 +6,25 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+
+// Firebase
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import * as firebase from 'firebase';
+import { firebaseConfig } from '../secret';
+firebase.initializeApp(firebaseConfig);
+
+import { LoginComponent } from './login/login.component'
+// import { AngularFirestoreModule } from "angularfire2/firestore";
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
