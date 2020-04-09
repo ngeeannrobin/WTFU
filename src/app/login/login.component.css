@@ -1,0 +1,80 @@
+.bg-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: -1;
+
+    background-color: #B9DE6C;
+}
+
+.bg {
+    width: 100%;
+    position: absolute;
+}
+
+.nar {
+    width: 60vw;
+    position: absolute;
+    
+    left: 50%; top: 20vw;
+    transform: translateX(-50%);
+    
+}
+
+.btn-login {
+    display: inline-block;
+    position: absolute;
+
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,-50%);
+
+    width: 75%;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    text-align: center;
+    font-size: 1.1em;
+
+    color: #488878;
+    background-color: #FEF2B6;
+
+    border: 2px solid #488878;
+
+    animation: tapme 300ms infinite 0s alternate-reverse;
+    animation-timing-function: cubic-bezier();
+
+    -webkit-animation: tapme 300ms infinite 0s alternate-reverse;
+    -webkit-animation-timing-function: cubic-bezier();
+}
+
+
+
+@keyframes tapme {
+    from{transform: translate(-50%,-50%);                   box-shadow: 0 5px #488878;}
+    to  {transform: translate(-50%,calc(-50% + 2.5px));     box-shadow: 0 2.5px #488878;}
+}
+
+@-webkit-keyframes tapme {
+    from{transform: translate(-50%,-50%);                   box-shadow: 0 5px #488878;}
+    to  {transform: translate(-50%,calc(-50% + 2.5px));     box-shadow: 0 2.5px #488878;}
+}
+
+.g {
+    width: 1.1em;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.credit {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90vw;
+}

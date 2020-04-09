@@ -11,14 +11,20 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.test();
+    this.auth.CheckLogin().then(loggedin=>{
+      if (loggedin)
+        alert("logged in");
+      else
+        alert("not logged in");
+    })
   }
 
-  test(){
-    // this.auth.SignInWithGoogle();
-    this.auth.GetUserId().then(uid=>{
-      console.log(uid);
-    })
+  login(){
+    this.auth.SignInWithGoogle().then(res=>{
+      alert("login successful");
+    }).catch(rej=>{
+      alert(rej);
+    });
   }
 
 }
