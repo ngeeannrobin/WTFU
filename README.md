@@ -1,3 +1,15 @@
+# Developer notes
+
+1. This project is for fun.
+
+# Project Information
+
+WTFU stands for Wake The Friend Up (substitute Friend for a less friendly word). 
+
+The idea is simple, the user with the IOT device can give friends access. Friends with access is able to use the system to wake the user up through the IOT device. (I understand that phone calls are a thing, but this is more fun.)
+
+Upon completion, the friends should be able to blast audio to the device in hopes that the user will wake up. The friends should also be able to record their own audio and send it to the device.
+
 # WTFU
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
