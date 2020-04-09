@@ -1,7 +1,7 @@
 {
   "name": "Wake The Friend Up",
   "short_name": "WTFU",
-  "theme_color": "#1976d2",
+  "theme_color": "#84C8C6",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

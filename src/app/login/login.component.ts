@@ -17,8 +17,6 @@ export class LoginComponent implements OnInit {
     this.auth.CheckLogin().then(loggedin=>{
       if (loggedin)
         alert("logged in");
-      // else
-      //   alert("not logged in");
     })
   }
 
@@ -27,9 +25,19 @@ export class LoginComponent implements OnInit {
     this.message = "Authenticating";
     this.auth.SignInWithGoogle().then(res=>{
       this.message = "Joining Server"
-    }).catch(rej=>{
+      //redirect code here
+    }).catch(err=>{
       this.loading = false;
-      alert(rej);
+      switch(err.code){
+        case "auth/popup-blocked":
+          alert("Popup blocked by browser. Please enable popup and try again.");
+          break;
+        case "auth/cancelled-popup-request":
+        case "auth/popup-closed-by-user":
+            break;
+        default:
+          alert("Mistakes were made: " + err.message);
+      }
     });
   }
 
