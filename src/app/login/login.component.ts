@@ -34,9 +34,7 @@ export class LoginComponent implements OnInit {
       if (!loggedIn){
         this.CheckLoginLoop();
       } else{
-        this.loading = true;
-        this.message = "Joining Server";
-        this.router.navigate(["/mainmenu"]);
+        this.Redirect();
       }
     })
   }
@@ -45,8 +43,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.message = "Authenticating";
     this.auth.SignInWithGoogle().then(res=>{
-      this.message = "Joining Server";
-      // this.router.navigate(["/mainmenu"]);
+      this.Redirect();
     }).catch(err=>{
       this.loading = false;
       switch(err.code){
@@ -55,12 +52,17 @@ export class LoginComponent implements OnInit {
           break;
         case "auth/cancelled-popup-request":
         case "auth/popup-closed-by-user":
-          alert(err);
             break;
         default:
           alert("Mistakes were made: " + err.message);
       }
     });
+  }
+
+  Redirect() {
+    this.loading = true;
+    this.message = "Joining Server";
+    this.router.navigate(["/mainmenu"]);
   }
 
 }
