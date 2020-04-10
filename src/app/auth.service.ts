@@ -44,4 +44,8 @@ export class AuthService {
     return firebase.auth().signInWithPopup(provider);
   }
 
+  SignOut(): Promise<void> {
+    return this.auth.signOut()
+  }
+
 }
