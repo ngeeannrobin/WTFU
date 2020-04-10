@@ -14,6 +14,12 @@
     position: absolute;
     left:50%;
     transform: translate(-50%);
+    border-bottom: 100vh solid #B9DE6C;
+}
+
+.bg.extension {
+    width: 100%;
+    image-rendering: pixelated;
 }
 
 .nar {
@@ -21,7 +27,7 @@
     width: 60vw;
     position: absolute;
     
-    left: 50%; top: 10%;
+    left: 50%; top: 7.5vmin;
     transform: translateX(-50%);
     
 }
