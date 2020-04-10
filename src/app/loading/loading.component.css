@@ -14,6 +14,7 @@
 
     top: 50%;
     transform: translateY(-50%);
+
 }
 
 .paw {
@@ -53,39 +54,39 @@
 
 
 @keyframes one {
-    0% {opacity: 0%}
-    20%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0% {opacity: 0}
+    20%, 80%{opacity: 1}
+    100% {opacity: 0}
 }
 
 @-webkit-keyframes one {
-    0% {opacity: 0%}
-    20%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0% {opacity: 0}
+    20%, 80%{opacity: 1}
+    100% {opacity: 0}
 }
 
 @keyframes two {
-    0%, 20% {opacity: 0%}
-    40%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0%,20% {opacity: 0}
+    40%,80% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @-webkit-keyframes two {
-    0%, 20% {opacity: 0%}
-    40%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0%,20% {opacity: 0}
+    40%,80% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @keyframes three {
-    0%, 40% {opacity: 0%}
-    60%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0%, 40% {opacity: 0}
+    60%, 80% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @-webkit-keyframes three {
-    0%, 40% {opacity: 0%}
-    60%, 80%{opacity: 100%}
-    100% {opacity: 0%}
+    0%, 40% {opacity: 0}
+    60%, 80% {opacity: 1}
+    100% {opacity: 0}
 }
 
 .message {
