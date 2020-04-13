@@ -14,6 +14,8 @@ export class MainMenuComponent implements OnInit {
     private router: Router
   ) { }
 
+  messages: Array<string> = [];
+
   ngOnInit(): void {
   }
 
@@ -21,6 +23,15 @@ export class MainMenuComponent implements OnInit {
     this.auth.SignOut().then(_=>{
       this.router.navigate(["/login"]);
     })
+  }
+
+
+  credit() {
+    this.messages = ['Art assets by:\n Spry Fox LLC','Application developed by:\nRobin DeBank'];
+  }
+
+  creditDone(emitted) {
+    this.messages = [];
   }
 
 }
