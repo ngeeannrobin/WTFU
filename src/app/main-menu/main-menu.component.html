@@ -12,6 +12,44 @@
 </div>
 
 <!-- <p>main-menu works!</p> -->
+ 
+<div class="container">
 
+    <div class="heading">Actions</div>
 
-<button (click)="out()">sign out</button>
+    <div class="option">
+        <div class="icon-container">
+            <img src="../../assets/icons/key.png" class="icon">
+        </div>
+        <div>
+            <div class="text">Access</div>
+            <div class="subtext">Set access to your alarm.</div>
+        </div>
+    </div>
+
+    <div class="option">
+        <div class="icon-container">
+            <img src="../../assets/icons/clock.png" class="icon">
+        </div>
+        <div>
+            <div class="text">Wake</div>
+            <div class="subtext">Wake someone up.</div>
+        </div>
+    </div>
+
+    <div class="heading">Options</div>
+
+    <div class="option">
+        <div class="icon-container">
+            <img src="../../assets/icons/heart.png" class="icon">
+        </div>
+        <div class="text">Credits</div>
+    </div>
+
+    <div class="option" (click)="out()">
+        <div class="icon-container">
+            <img src="../../assets/icons/logout.png" class="icon">
+        </div>
+        <div class="text">Log out</div>
+    </div>
+</div>
