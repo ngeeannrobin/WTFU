@@ -39,7 +39,7 @@
 
     <div class="heading">Options</div>
 
-    <div class="option">
+    <div class="option" (click)="credit()">
         <div class="icon-container">
             <img src="../../assets/icons/heart.png" class="icon">
         </div>
@@ -53,3 +53,5 @@
         <div class="text">Log out</div>
     </div>
 </div>
+
+<beartext *ngIf="messages.length>0" [messages]="messages" (emitter)="creditDone($event)"></beartext>

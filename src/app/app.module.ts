@@ -16,7 +16,8 @@ firebase.initializeApp(firebaseConfig);
 
 import { LoginComponent } from './login/login.component';
 import { LoadingComponent } from './loading/loading.component';
-import { MainMenuComponent } from './main-menu/main-menu.component'
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { BeartextComponent } from './beartext/beartext.component'
 // import { AngularFirestoreModule } from "angularfire2/firestore";
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component'
     AppComponent,
     LoginComponent,
     LoadingComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    BeartextComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
