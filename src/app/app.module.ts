@@ -9,24 +9,25 @@ import { environment } from '../environments/environment';
 
 // Firebase
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import * as firebase from 'firebase';
+
+// Components
+import { BeartextComponent } from './beartext/beartext.component'
+import { LoadingComponent } from './loading/loading.component';
+import { LoginComponent } from './login/login.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+
 import { firebaseConfig } from '../secret';
 firebase.initializeApp(firebaseConfig);
-
-import { LoginComponent } from './login/login.component';
-import { LoadingComponent } from './loading/loading.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { BeartextComponent } from './beartext/beartext.component'
-// import { AngularFirestoreModule } from "angularfire2/firestore";
-
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    BeartextComponent,
     LoadingComponent,
+    LoginComponent,
     MainMenuComponent,
-    BeartextComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
