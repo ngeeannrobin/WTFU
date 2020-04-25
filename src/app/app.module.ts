@@ -14,19 +14,23 @@ import * as firebase from 'firebase';
 import { firebaseConfig } from '../secret';
 firebase.initializeApp(firebaseConfig);
 
+
+// components
+import { BeartextComponent } from './beartext/beartext.component';
 import { LoginComponent } from './login/login.component';
 import { LoadingComponent } from './loading/loading.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { BeartextComponent } from './beartext/beartext.component'
-// import { AngularFirestoreModule } from "angularfire2/firestore";
+import { MainMenuComponent } from './menu/main-menu/main-menu.component';
+import { MenuComponent } from './menu/menu/menu.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    BeartextComponent,
     LoginComponent,
     LoadingComponent,
     MainMenuComponent,
-    BeartextComponent
+    MenuComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),

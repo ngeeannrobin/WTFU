@@ -1,0 +1,56 @@
+
+
+<!-- <p>main-menu works!</p> -->
+ 
+<div class="menu-container">
+
+    <div class="menu-heading">Actions</div>
+
+    <div class="menu-option">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/key.png" class="menu-icon">
+        </div>
+        <div>
+            <div class="menu-text">Access</div>
+            <div class="menu-subtext">Set access to your alarm.</div>
+        </div>
+    </div>
+
+    <div class="menu-option">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/clock.png" class="menu-icon">
+        </div>
+        <div>
+            <div class="menu-text">Wake</div>
+            <div class="menu-subtext">Wake your friend up.</div>
+        </div>
+    </div>
+
+    <div class="menu-option">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/add-friend.png" class="menu-icon">
+        </div>
+        <div>
+            <div class="menu-text">Add Friend</div>
+            <div class="menu-subtext">Send/Accept friend request.</div>
+        </div>
+    </div>
+
+    <div class="menu-heading">Options</div>
+
+    <div class="menu-option" (click)="credit()">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/heart.png" class="menu-icon">
+        </div>
+        <div class="menu-text">Credits</div>
+    </div>
+
+    <div class="menu-option" (click)="out()">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/logout.png" class="menu-icon">
+        </div>
+        <div class="menu-text">Log out</div>
+    </div>
+</div>
+
+<beartext *ngIf="messages.length>0" [messages]="messages" (emitter)="creditDone($event)"></beartext>
