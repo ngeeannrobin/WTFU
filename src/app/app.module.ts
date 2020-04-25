@@ -13,11 +13,13 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import * as firebase from 'firebase';
 
-// Components
-import { BeartextComponent } from './beartext/beartext.component'
-import { LoadingComponent } from './loading/loading.component';
+// components
+import { BeartextComponent } from './beartext/beartext.component';
 import { LoginComponent } from './login/login.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
+import { LoadingComponent } from './loading/loading.component';
+import { MainMenuComponent } from './menu/main-menu/main-menu.component';
+import { MenuComponent } from './menu/menu/menu.component'
+
 
 import { firebaseConfig } from '../secret';
 firebase.initializeApp(firebaseConfig);
@@ -25,9 +27,11 @@ firebase.initializeApp(firebaseConfig);
   declarations: [
     AppComponent,
     BeartextComponent,
+    LoginComponent,
     LoadingComponent,
     LoginComponent,
     MainMenuComponent,
+    MenuComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),

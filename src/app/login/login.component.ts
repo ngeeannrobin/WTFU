@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
   Redirect() {
     this.loading = true;
     this.message = "Joining Server";
-    this.router.navigate(["/mainmenu"]);
+    this.router.navigate(["/menu"]);
   }
 
 }
