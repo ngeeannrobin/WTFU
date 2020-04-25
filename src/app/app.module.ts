@@ -9,11 +9,9 @@ import { environment } from '../environments/environment';
 
 // Firebase
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from '@angular/fire';
 import * as firebase from 'firebase';
-import { firebaseConfig } from '../secret';
-firebase.initializeApp(firebaseConfig);
-
 
 // components
 import { BeartextComponent } from './beartext/beartext.component';
@@ -23,12 +21,15 @@ import { MainMenuComponent } from './menu/main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu/menu.component'
 
 
+import { firebaseConfig } from '../secret';
+firebase.initializeApp(firebaseConfig);
 @NgModule({
   declarations: [
     AppComponent,
     BeartextComponent,
     LoginComponent,
     LoadingComponent,
+    LoginComponent,
     MainMenuComponent,
     MenuComponent
   ],
