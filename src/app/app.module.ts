@@ -22,6 +22,7 @@ import { MenuComponent } from './menu/menu/menu.component'
 
 
 import { firebaseConfig } from '../secret';
+import { AddFriendComponent } from './menu/add-friend/add-friend.component';
 firebase.initializeApp(firebaseConfig);
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ firebase.initializeApp(firebaseConfig);
     LoadingComponent,
     LoginComponent,
     MainMenuComponent,
-    MenuComponent
+    MenuComponent,
+    AddFriendComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
