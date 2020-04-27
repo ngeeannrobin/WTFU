@@ -63,5 +63,9 @@ export class FirestoreService {
     return this.GetRequestByRef(ref);
   }
 
+  ToggleFriendAccess(uid:string,fid:string,access:boolean){
+    return this.db.doc(`User/${uid}/Friend/${fid}`).set({access:access},{merge:true});
+  }
+
 
 }
