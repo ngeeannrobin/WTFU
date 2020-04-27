@@ -19,21 +19,21 @@ export class MainMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  out() {
+  Out() {
     this.auth.SignOut().then(_=>{
       this.router.navigate(["/login"]);
     })
   }
 
-  add() {
-    this.emitter.emit({code:"nav",data:"add"});
+  Nav(key:string) {
+    this.emitter.emit({code:"nav",data:key});
   }
 
-  credit() {
+  Credit() {
     this.messages = ['Art assets by:\n Spry Fox LLC','Application developed by:\nRobin DeBank'];
   }
 
-  creditDone(emitted) {
+  CreditDone(emitted) {
     this.messages = [];
   }
 

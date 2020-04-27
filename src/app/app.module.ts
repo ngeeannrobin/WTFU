@@ -26,6 +26,7 @@ import { AddFriendComponent } from './menu/add-friend/add-friend.component';
 import { SendFriendRequestComponent } from './menu/send-friend-request/send-friend-request.component';
 
 import { FormsModule } from "@angular/forms";
+import { AccessComponent } from './menu/access/access.component';
 
 
 firebase.initializeApp(firebaseConfig);
@@ -39,7 +40,8 @@ firebase.initializeApp(firebaseConfig);
     MainMenuComponent,
     MenuComponent,
     AddFriendComponent,
-    SendFriendRequestComponent
+    SendFriendRequestComponent,
+    AccessComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
