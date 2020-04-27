@@ -75,3 +75,13 @@
     color: #428575;
     font-weight: bold;
 }
+
+.message {
+    justify-content: center;
+}
+
+.display-pic {
+    padding: 0 !important;
+    width: calc(5vh + 6px) !important;
+    height: calc(5vh + 6px) !important;
+}

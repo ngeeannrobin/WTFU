@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  menuArray: Array<string> = ["fren-req","add","main"];
-  constructor() { }
+  menuArray: Array<string> = ["add","main"];
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.auth.CheckLogin().then(loggedIn=>{
+      if (!loggedIn){
+        this.router.navigate(["/login"]);
+      }
+    })
   }
 
   HandleTap(o: any) {

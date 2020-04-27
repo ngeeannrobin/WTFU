@@ -1,8 +1,4 @@
-.display-pic {
-    padding: 0 !important;
-    width: calc(5vh + 6px) !important;
-    height: calc(5vh + 6px) !important;
-}
+
 
 .name {
     font-size: 0.9em !important;
@@ -33,4 +29,20 @@
 
 .del {
     background-color: #C96666;
+}
+
+.confirmed, .deleted {
+    transition: background-color 300ms;
+}
+
+.confirmed {
+    background-color: #D8FFF5;
+}
+
+.deleted {
+    background-color: #FFD8D8;
+}
+
+.disappear {
+    display: none !important;
 }

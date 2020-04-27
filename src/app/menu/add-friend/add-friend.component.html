@@ -5,26 +5,19 @@
 
     <div class="menu-heading">Friend Request</div>
 
-    <div class="menu-option">
-            <img src="https://lh3.googleusercontent.com/a-/AOh14GiRSSFQwS-shbJ-gIXnE7o5soARnTLwy7X50oAc" class="menu-icon-container display-pic">
-        <div>
-            <div class="menu-text name">Display Name</div>
-            <div class="menu-subtext email">email@example.com</div>
-            <div class="condel">
-                <div class="con" (click)="Confirm()">Confirm</div>
-                <div class="del" (click)="Delete()">Delete</div>
-            </div>
-        </div>
+    
+    <div class="menu-option message" *ngIf="message">
+        {{message}}
     </div>
 
-    <div class="menu-option">
-        <img src="https://lh3.googleusercontent.com/a-/AOh14GiRSSFQwS-shbJ-gIXnE7o5soARnTLwy7X50oAc" class="menu-icon-container display-pic">
+    <div class="menu-option" *ngFor="let req of fReq" [ngClass]="{'disappear': req.accept!==null && !req.loading,'confirmed': req.loading&&req.accept,'deleted': req.loading&&!req.accept}">  
+            <img [src]="req.photo" class="menu-icon-container display-pic">
         <div>
-            <div class="menu-text name">Name Display</div>
-            <div class="menu-subtext email">example@email.comm</div>
+            <div class="menu-text name">{{req.name}}</div>
+            <div class="menu-subtext email">{{req.email}}</div>
             <div class="condel">
-                <div class="con">Confirm</div>
-                <div class="del">Delete</div>
+                <div class="con" (click)="HandleConfirmation(req,true)">Confirm</div>
+                <div class="del" (click)="HandleConfirmation(req,false)">Delete</div>
             </div>
         </div>
     </div>
