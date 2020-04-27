@@ -27,17 +27,29 @@ export class SendFriendRequestComponent implements OnInit {
   }
 
   Send(){
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
-      if (!this.loading) {
-        this.loading = true;
-        this.db.SendFriendRequest(this.uid,this.email).then(_=>{
-          this.loading = false;
-          this.email = "";
-          this.message = "Friend request sent.";
-        });
-      }
+    this.message = "";
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+      this.message = "Invalid email format.";
+    } else if (this.loading) {
+      this.message = "Be patient bodoh.";
     } else {
-      this.message = "Invalid email format."
+      this.loading = true;
+
+      this.db.GetFriendByEmail(this.uid,this.email).then(fren=>{
+        if (fren.length){
+          this.loading = false;
+          this.message = "This user is already your friend.";
+        } else {
+          this.db.SendFriendRequest(this.uid,this.email).then(_=>{
+            this.loading = false;
+            this.email = "";
+            this.message = "Friend request sent.";
+          });
+        }
+      });
+        
+
+
     }
   }
 
