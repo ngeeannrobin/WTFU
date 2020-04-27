@@ -47,7 +47,8 @@ export class FirestoreService {
   }
 
   GetFriendRequest(uid:string){
-    return this.GetRequest(this.db.collection(`User/${uid}/FriendRequest`));
+    // return this.GetRequest(this.db.collection(`User/${uid}/FriendRequest`));
+    return this.db.collection(`User/${uid}/FriendRequest`).valueChanges();
   }
 
   RespondFriendRequest(uid:string,fid:string,accept:boolean){
