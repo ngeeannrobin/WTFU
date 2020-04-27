@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class MainMenuComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) { }
-
+  @Output() emitter: EventEmitter<any> = new EventEmitter();
   messages: Array<string> = [];
 
   ngOnInit(): void {
@@ -25,6 +25,9 @@ export class MainMenuComponent implements OnInit {
     })
   }
 
+  add() {
+    this.emitter.emit({code:"nav",data:"add"});
+  }
 
   credit() {
     this.messages = ['Art assets by:\n Spry Fox LLC','Application developed by:\nRobin DeBank'];

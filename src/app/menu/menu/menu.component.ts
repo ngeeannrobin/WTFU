@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  menuArray: Array<string> = ["fren-req","add","main"];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  HandleTap(o: any) {
+    switch (o.code){
+      case "nav":
+        this.menuArray.unshift(o.data);
+        break;
+      case "back":
+        this.menuArray.shift();
+        break;
+      default:
+        break;
+    }
   }
 
 }

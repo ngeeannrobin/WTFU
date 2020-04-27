@@ -1,0 +1,36 @@
+.display-pic {
+    padding: 0 !important;
+    width: calc(5vh + 6px) !important;
+    height: calc(5vh + 6px) !important;
+}
+
+.name {
+    font-size: 0.9em !important;
+}
+
+.email {
+    font-size: 0.7em !important;
+}
+
+.condel {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.con, .del {
+    display: inline-block;
+    font-size: 0.7em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+    color: white;
+}
+
+.con {
+    background-color: #3E7B6D;
+    margin-right: 2em;
+}
+
+.del {
+    background-color: #C96666;
+}

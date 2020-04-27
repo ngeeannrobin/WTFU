@@ -11,4 +11,6 @@
     <img src="../../assets/background/tree/tm.png" class="tree vsid top">
 </div>
 
-<main-menu></main-menu>
+<main-menu *ngIf="menuArray[0]=='main'" (emitter)="HandleTap($event)"></main-menu>
+<add-friend *ngIf="menuArray[0]=='add'" (emitter)="HandleTap($event)"></add-friend>
+<send-friend-request *ngIf="menuArray[0]=='fren-req'" (emitter)="HandleTap($event)"></send-friend-request>
