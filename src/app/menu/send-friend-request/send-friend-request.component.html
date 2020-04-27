@@ -3,10 +3,15 @@
     <div class="menu-input-container">
         <div class="menu-text">&nbsp;Enter friend's email</div>
         <div class="email-input-container">
-            <input type="email" class="menu-input" [(ngModel)]="email" placeholder="Friend email">
-            <div class="menu-icon-container email-icon-container">
+            <input type="email" class="menu-input" [(ngModel)]="email" placeholder="Friend email" [attr.disabled]="loading?'':null">
+            <div class="menu-icon-container email-icon-container" (click)="Send()">
                 <img src="../../assets/icons/add-friend.png" class="menu-icon">
             </div>
+
+        
+        </div>
+        <div class="menu-option message">
+            {{message}}
         </div>
     </div>
     

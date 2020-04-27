@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,21 @@ export class FirestoreService {
         res(array);
       })
     })
+  }
+
+
+  SendFriendRequest(uid:string, email:string){
+    const ref = this.db.doc(`User/${uid}`);
+
+    return ref.set({friendRequestSent: email}, {merge: true});
+  }
+
+  GetFriendRequest(uid:string){
+    return this.GetRequest(this.db.collection(`User/${uid}/FriendRequest`));
+  }
+
+  RespondFriendRequest(uid:string,fid:string,accept:boolean){
+    return this.db.doc(`User/${uid}/FriendRequest/${fid}`).set({accept: accept},{merge:true});
   }
 
 
