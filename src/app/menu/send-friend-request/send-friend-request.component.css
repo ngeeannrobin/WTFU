@@ -1,0 +1,31 @@
+.menu-input {
+    border: 2px solid #428575; 
+    border-bottom: 6px solid #428575;
+    border-radius: 10px;
+    padding: 3px;
+    height: 5vh;
+    width: 100%;
+    position: relative;
+    margin-right: 2.5vw;
+    font-size: 1.25em;
+    color: #34685A;
+    padding-left: 0.5em;
+}
+
+.menu-input-container {
+    padding: 1.5vmin 5vmin;
+}
+
+
+.menu-input-container {
+    padding-top: 10vmin;
+    padding-bottom: 10vmin;
+}
+
+.email-input-container {
+    display: flex;
+}
+
+.email-icon-container {
+    margin-right: 0 !important;
+}

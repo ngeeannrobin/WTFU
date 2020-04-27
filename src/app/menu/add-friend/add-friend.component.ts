@@ -12,16 +12,20 @@ export class AddFriendComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  back() {
+  Back() {
     this.emitter.emit({code:"back"});
   }
 
-  confirm() {
+  Confirm() {
 
   }
 
-  delete() {
+  Delete() {
     
+  }
+
+  AddFriend() {
+    this.emitter.emit({code:"nav",data:"fren-req"})
   }
 
 }

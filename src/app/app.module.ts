@@ -23,6 +23,11 @@ import { MenuComponent } from './menu/menu/menu.component'
 
 import { firebaseConfig } from '../secret';
 import { AddFriendComponent } from './menu/add-friend/add-friend.component';
+import { SendFriendRequestComponent } from './menu/send-friend-request/send-friend-request.component';
+
+import { FormsModule } from "@angular/forms";
+
+
 firebase.initializeApp(firebaseConfig);
 @NgModule({
   declarations: [
@@ -33,14 +38,16 @@ firebase.initializeApp(firebaseConfig);
     LoginComponent,
     MainMenuComponent,
     MenuComponent,
-    AddFriendComponent
+    AddFriendComponent,
+    SendFriendRequestComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

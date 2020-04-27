@@ -3,7 +3,7 @@
 
 <div class="menu-container">
 
-    <div class="menu-heading">Add</div>
+    <div class="menu-heading">Friend Request</div>
 
     <div class="menu-option">
             <img src="https://lh3.googleusercontent.com/a-/AOh14GiRSSFQwS-shbJ-gIXnE7o5soARnTLwy7X50oAc" class="menu-icon-container display-pic">
@@ -11,8 +11,8 @@
             <div class="menu-text name">Display Name</div>
             <div class="menu-subtext email">email@example.com</div>
             <div class="condel">
-                <div class="con" (click)="confirm()">Confirm</div>
-                <div class="del" (click)="delete()">Delete</div>
+                <div class="con" (click)="Confirm()">Confirm</div>
+                <div class="del" (click)="Delete()">Delete</div>
             </div>
         </div>
     </div>
@@ -31,7 +31,15 @@
 
     <div class="menu-heading">Options</div>
 
-    <div class="menu-option" (click)="back()">
+    <div class="menu-option" (click)="AddFriend()">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/add-friend.png" class="menu-icon">
+        </div>
+        <div class="menu-text">Send friend request</div>
+    </div>
+
+
+    <div class="menu-option" (click)="Back()">
         <div class="menu-icon-container">
             <img src="../../assets/icons/back.png" class="menu-icon">
         </div>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  menuArray: Array<string> = ["main"];
+  menuArray: Array<string> = ["fren-req","add","main"];
   constructor() { }
 
   ngOnInit(): void {

@@ -19,8 +19,14 @@
     max-height: 70%;
 
     overflow-y: scroll;
+    overflow-x: hidden;
     overflow-wrap: anywhere;
+
+    
 }
+
+.menu-container::-webkit-scrollbar {display: none;}
+.menu-container {-ms-overflow-style: none;}
 
 .menu-heading {
     background-color: #61A7A5;

@@ -1,0 +1,21 @@
+<div class="menu-container">
+    <div class="menu-heading">Send Friend Request</div>
+    <div class="menu-input-container">
+        <div class="menu-text">&nbsp;Enter friend's email</div>
+        <div class="email-input-container">
+            <input type="email" class="menu-input" [(ngModel)]="email" placeholder="Friend email">
+            <div class="menu-icon-container email-icon-container">
+                <img src="../../assets/icons/add-friend.png" class="menu-icon">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="menu-option" (click)="Back()">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/back.png" class="menu-icon">
+        </div>
+        <div class="menu-text">Back</div>
+    </div>
+</div>
+
