@@ -27,6 +27,7 @@ import { SendFriendRequestComponent } from './menu/send-friend-request/send-frie
 
 import { FormsModule } from "@angular/forms";
 import { AccessComponent } from './menu/access/access.component';
+import { WakeyComponent } from './menu/wakey/wakey.component';
 
 
 firebase.initializeApp(firebaseConfig);
@@ -41,7 +42,8 @@ firebase.initializeApp(firebaseConfig);
     MenuComponent,
     AddFriendComponent,
     SendFriendRequestComponent,
-    AccessComponent
+    AccessComponent,
+    WakeyComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),

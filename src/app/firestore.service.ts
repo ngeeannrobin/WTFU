@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,10 @@ export class FirestoreService {
 
   GetRequest(doc): Promise<any>{
     return new Promise((res,rej) => {
-      doc.valueChanges().subscribe(
+      let disposeable = doc.valueChanges().subscribe(
         data => { 
           res(data);
+          disposeable.unsubscribe();
         },
         err => {
           rej(err);
@@ -45,7 +47,8 @@ export class FirestoreService {
   }
 
   GetFriendRequest(uid:string){
-    return this.GetRequest(this.db.collection(`User/${uid}/FriendRequest`));
+    // return this.GetRequest(this.db.collection(`User/${uid}/FriendRequest`));
+    return this.db.collection(`User/${uid}/FriendRequest`).valueChanges();
   }
 
   RespondFriendRequest(uid:string,fid:string,accept:boolean){
@@ -65,6 +68,15 @@ export class FirestoreService {
 
   ToggleFriendAccess(uid:string,fid:string,access:boolean){
     return this.db.doc(`User/${uid}/Friend/${fid}`).set({access:access},{merge:true});
+  }
+
+  // WAKEY
+  ToggleAlarm(fid:string,wakey:boolean){
+    return this.db.doc(`User/${fid}`).set({wakey: wakey},{merge:true});
+  }
+
+  GetAlarm(fid:string){
+    return this.db.doc(`User/${fid}`).valueChanges();
   }
 
 
