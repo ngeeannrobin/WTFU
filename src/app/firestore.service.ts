@@ -37,10 +37,11 @@ export class FirestoreService {
   }
 
 
-  SendFriendRequest(uid:string, email:string){
-    const ref = this.db.doc(`User/${uid}`);
 
-    return ref.set({friendRequestSent: email}, {merge: true});
+  // FRIEND REQUEST
+  
+  SendFriendRequest(uid:string, email:string){
+    return  this.db.doc(`User/${uid}`).set({friendRequestSent: email}, {merge: true});
   }
 
   GetFriendRequest(uid:string){
@@ -49,6 +50,17 @@ export class FirestoreService {
 
   RespondFriendRequest(uid:string,fid:string,accept:boolean){
     return this.db.doc(`User/${uid}/FriendRequest/${fid}`).set({accept: accept},{merge:true});
+  }
+
+  // FRIEND
+
+  GetFriend(uid:string){
+    return this.GetRequest(this.db.collection(`User/${uid}/Friend`));
+  }
+
+  GetFriendByEmail(uid:string,email:string){
+    const ref = this.db.collection(`User/${uid}/Friend`).ref.where("email","==",email);
+    return this.GetRequestByRef(ref);
   }
 
 
