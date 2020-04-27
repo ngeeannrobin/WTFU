@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  menuArray: Array<string> = ["add","main"];
+  menuArray: Array<string> = ["main"];
   constructor(
     private auth: AuthService,
     private router: Router
