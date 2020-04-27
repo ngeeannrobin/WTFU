@@ -1,0 +1,11 @@
+.access {
+    background-color: #D8FFE8;
+}
+
+.not-access {
+    background-color: #FFD8D8;
+}
+
+.loading {
+    background-color: #F2F2F2 !important;
+}

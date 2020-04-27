@@ -1,0 +1,32 @@
+<div class="menu-container">
+    <div class="menu-heading">Tap on friend to toggle access</div>
+    <div class="menu-option message" *ngIf="message">
+        {{message}}
+    </div>
+
+    <div class="menu-option" *ngFor="let fren of friends" [ngClass]="{'access':fren.access, 'not-access':!fren.access, 'loading':fren.loading}">  
+        <img [src]="fren.photo" class="menu-icon-container display-pic">
+        <div>
+            <div class="menu-text">{{fren.name}}</div>
+            <div class="menu-subtext">{{fren.email}}</div>
+        </div>
+    </div>
+
+    <div class="menu-option" (click)="Nav('add');" *ngIf="noFriend">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/add-friend.png" class="menu-icon">
+        </div>
+        <div>
+            <div class="menu-text">Add Friend</div>
+            <div class="menu-subtext">You have no friends.</div>
+        </div>
+    </div>
+
+    <div class="menu-heading">Options</div>
+    <div class="menu-option" (click)="Back()">
+        <div class="menu-icon-container">
+            <img src="../../assets/icons/back.png" class="menu-icon">
+        </div>
+        <div class="menu-text">Back</div>
+    </div>
+</div>
