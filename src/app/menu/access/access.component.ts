@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { FirestoreService } from 'src/app/firestore.service';
 
 @Component({
   selector: 'access',
@@ -14,11 +16,39 @@ export class AccessComponent implements OnInit {
 
   noFriend: boolean = false;
 
+  uid:string;
 
-  constructor() { }
+
+  constructor(
+    private auth: AuthService,
+    private db: FirestoreService
+  ) { }
 
   ngOnInit(): void {
-    this.message = "Green: can wake you up, Red: can't wake you up, Gray: loading"
+    this.auth.GetUserId().then(uid=>{
+      this.uid=uid;
+      this.GetFriend();
+    });
+  }
+
+  GetFriend(){
+    this.db.GetFriend(this.uid).then(friend=>{
+      this.friends = friend;
+      
+      this.noFriend = this.friends.length==0;
+      this.message = this.noFriend?"":"Green: access, Red: no access, Gray: loading";
+    })
+  }
+
+  Toggle(friend) {
+    if (!friend.loading){
+      friend.loading=true;
+      this.db.ToggleFriendAccess(this.uid,friend.uid,!friend.access).then(_=>{
+        this.message = "";
+        friend.access=!friend.access;
+        friend.loading=false;
+      })
+    }
   }
 
   Nav(key:string) {
@@ -28,5 +58,7 @@ export class AccessComponent implements OnInit {
   Back() {
     this.emitter.emit({code:"back"});
   }
+
+
 
 }

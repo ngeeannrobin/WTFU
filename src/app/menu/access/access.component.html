@@ -4,7 +4,7 @@
         {{message}}
     </div>
 
-    <div class="menu-option" *ngFor="let fren of friends" [ngClass]="{'access':fren.access, 'not-access':!fren.access, 'loading':fren.loading}">  
+    <div class="menu-option" *ngFor="let fren of friends" (click)="Toggle(fren)" [ngClass]="{'access':fren.access, 'not-access':!fren.access, 'loading':fren.loading}">  
         <img [src]="fren.photo" class="menu-icon-container display-pic">
         <div>
             <div class="menu-text">{{fren.name}}</div>
