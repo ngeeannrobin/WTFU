@@ -63,6 +63,11 @@ export class WakeyComponent implements OnInit {
     }
     
   }
+  
+
+  Req(){
+    location.href = "https://api.whatsapp.com/send?text=" + encodeURIComponent("Oi bodoh, gimme access to your alarm.");
+  }
 
   Nav(key:string) {
     this.emitter.emit({code:"nav",data:key});
