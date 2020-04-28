@@ -72,11 +72,11 @@ export class FirestoreService {
 
   // WAKEY
   ToggleAlarm(fid:string,wakey:boolean){
-    return this.db.doc(`User/${fid}`).set({wakey: wakey},{merge:true});
+    return this.db.doc(`User/${fid}/FriendReadable/${fid}`).set({wakey: wakey},{merge:true});
   }
 
   GetAlarm(fid:string){
-    return this.db.doc(`User/${fid}`).valueChanges();
+    return this.db.doc(`User/${fid}/FriendReadable/${fid}`).valueChanges();  
   }
 
 
