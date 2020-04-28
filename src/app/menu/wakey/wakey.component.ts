@@ -17,7 +17,7 @@ export class WakeyComponent implements OnInit {
   selected:any;
   frenReadSub:Subscription;
   noAccess: boolean = false;
-  wakeyData: any = false;
+  wakeyData: any = {};
 
   constructor(
     private auth: AuthService,
@@ -42,12 +42,13 @@ export class WakeyComponent implements OnInit {
   Select(friend){
     this.selected = friend;
     this.frenReadSub = this.db.GetAlarm(this.selected.uid).subscribe(data=>{
-      this.wakeyData = data;
+      this.wakeyData = data||{};
       this.noAccess = false;
       this.message = this.wakeyData.wakey?`Waking ${this.selected.name}...`:`Inactive.`;
     }, err=>{
       if (err.code === "permission-denied"){
         this.noAccess = true;
+        this.wakeyData = {};
       } else {
         alert(`Error Code ${err.code}: ${err.message}`)
       }
