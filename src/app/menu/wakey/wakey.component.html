@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div *ngIf="selected">
+    <div *ngIf="selected && !noAccess">
         <div class="menu-heading">Tap to toggle friend alarm</div>
         <div class="menu-option message">
             <div class="wake-button" [ngClass]="{'wakey':wakeyData.wakey,'no-wakey':!wakeyData.wakey,'loading':wakeyData.loading}" (click)="ToggleWake()">
@@ -38,12 +38,27 @@
         
     </div>
     
+    <div *ngIf="selected && noAccess">
+        <div class="menu-heading">No Access</div>
+        <div class="menu-option message">
+            <div class="menu-text">You have no access to this friend's alarm.</div>
+        </div>
+        <div class="menu-option" (click)="Req()">
+            <div class="menu-icon-container">
+                <img src="../../assets/icons/whatsapp.png" class="menu-icon">
+            </div>
+            <div>
+                <div class="menu-text">Request access</div>
+                <div class="menu-subtext">Text this friend for access.</div>
+            </div>
+        </div>
+    </div>
 
     <div class="menu-heading">Options</div>
     <div class="menu-option" (click)="Back()">
         <div class="menu-icon-container">
             <img src="../../assets/icons/back.png" class="menu-icon">
         </div>
-        <div class="menu-text">Back {{selected?"(alarm may stay active)":""}}</div>
+        <div class="menu-text">Back {{selected&&!noAccess?"(alarm may stay active)":""}}</div>
     </div>
 </div>
